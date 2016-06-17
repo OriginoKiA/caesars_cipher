@@ -1,0 +1,19 @@
+require "caesars_cipher.rb"
+
+describe converts_single_words do
+    it "convert single words into caesar's cipher" do
+        caesars_cipher("Hi",1).should == "ij"
+    end
+end
+
+describe convert_multiple_words do
+    it "converts multiple words in a sentence into caesar's cipher" do
+        caesars_cipher("Hello John",2).should == "jgnnq lqjp"
+    end
+end
+
+describe loops_around do
+    it "loops around if the given shift count is too big" do
+        caesars_cipher("Hello",27).should == ""
+    end
+end
